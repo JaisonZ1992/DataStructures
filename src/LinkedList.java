@@ -83,6 +83,18 @@ public class LinkedList {
 
     }
 
+    public void print() {
+        if (this.head == null) {
+            return;
+        }
+        Node tempNode = this.head;
+        while (tempNode != null) {
+            System.out.print(tempNode.data + "->");
+            tempNode = tempNode.nextNode;
+        }
+        System.out.println("NULL");
+    }
+
     private boolean isEmpty(){
         return this.head == null;
     }
@@ -97,19 +109,6 @@ public class LinkedList {
             position--;
         }
         return null;
-    }
-
-
-    public void print() {
-        if (this.head == null) {
-            return;
-        }
-        Node tempNode = this.head;
-        while (tempNode != null) {
-            System.out.print(tempNode.data + "->");
-            tempNode = tempNode.nextNode;
-        }
-        System.out.println("NULL");
     }
 
 }
