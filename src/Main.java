@@ -1,15 +1,30 @@
 import arraylist.ArrayList;
 import linkedlist.LinkedList;
+import search.SearchAlgorithm;
 import stack.StackWithArray;
 import stack.StackWithLinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-        executeArrayListOperations();
+        executeSearchAlgorithms();
+        //executeArrayListOperations();
         //executeLinkedList();
         //stackWithArrayOperations();
         //stackWithLinkedListOperations();
+    }
+
+    private static void executeSearchAlgorithms() {
+        int[] sampleArray = {50, 20, 40, 70, 30, 100, 10};
+        SearchAlgorithm.performLinearSearch(sampleArray, 70);
+        SearchAlgorithm.performLinearSearch(sampleArray, 7);
+
+        sampleArray = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        SearchAlgorithm.performBinarySearch(sampleArray, 5);
+        SearchAlgorithm.performBinarySearch(sampleArray, 1);
+        SearchAlgorithm.performBinarySearch(sampleArray, 9);
+        SearchAlgorithm.performBinarySearch(sampleArray, 7);
+        SearchAlgorithm.performBinarySearch(sampleArray, 2);
     }
 
     private static void executeArrayListOperations() {
