@@ -25,12 +25,10 @@ public class StackWithLinkedList {
             return;
         }
 
-        if (isEmpty()) {
-            top = node;
-        } else {
+        if (!isEmpty()) {
             node.nextNode = top;
-            top = node;
         }
+        top = node;
     }
 
     public int peek() {

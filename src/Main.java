@@ -1,17 +1,24 @@
 import arraylist.ArrayList;
 import linkedlist.LinkedList;
 import search.SearchAlgorithm;
+import sorting.SortingAlgorithm;
 import stack.StackWithArray;
 import stack.StackWithLinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-        executeSearchAlgorithms();
+        executeSortingAlgorithms();
+        //executeSearchAlgorithms();
         //executeArrayListOperations();
         //executeLinkedList();
         //stackWithArrayOperations();
         //stackWithLinkedListOperations();
+    }
+
+    private static void executeSortingAlgorithms() {
+        int[] array = {10, 9, 7, 101, 23, 44, 12, 78, 34, 23};
+        SortingAlgorithm.performBubbleSort(array);
     }
 
     private static void executeSearchAlgorithms() {
