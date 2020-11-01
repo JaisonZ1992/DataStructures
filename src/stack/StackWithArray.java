@@ -1,3 +1,5 @@
+package stack;
+
 public class StackWithArray {
     int top = -1;
     int[] stack;
@@ -18,7 +20,7 @@ public class StackWithArray {
     public int pop(){
         if (isEmpty()){
             System.out.println("Stack empty");//Can throw errors
-            return 0;
+            return -1;
         }else {
             return this.stack[this.top--];
         }
@@ -27,7 +29,7 @@ public class StackWithArray {
     public int peek(){
         if (isEmpty()){
             System.out.println("Stack empty");//Can throw errors
-            return 0;
+            return -1;
         }
         return this.stack[top];
     }
@@ -37,7 +39,7 @@ public class StackWithArray {
             System.out.println("Stack empty");
             return;
         }
-        for(int i=0; i <= top; i++){
+        for(int i=top; i >= 0; i--){
             System.out.println(this.stack[i]);
         }
     }

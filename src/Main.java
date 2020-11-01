@@ -1,12 +1,37 @@
+import linkedlist.LinkedList;
+import stack.StackWithArray;
+import stack.StackWithLinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-       // executeLinkedList();
-        executeStackOperations();
+        //executeLinkedList();
+        //stackWithArrayOperations();
+        stackWithLinkedListOperations();
     }
 
-    private static void executeStackOperations() {
+    private static void stackWithLinkedListOperations() {
+        StackWithLinkedList list = new StackWithLinkedList();
+        list.print();
+        list.push(10);
+        list.push(20);
+        list.push(30);
+        list.print();
+
+        int item =  list.peek();
+        System.out.println("Top item:" + item);
+
+        item = list.pop();
+        System.out.println("Popped:" + item);
+        item = list.pop();
+        System.out.println("Popped:" + item);
+        item = list.pop();
+        System.out.println("Popped:" + item);
+
+        list.pop();
+    }
+
+    private static void stackWithArrayOperations() {
         StackWithArray array = new StackWithArray(3);
         array.print();
         array.push(10);
@@ -25,6 +50,7 @@ public class Main {
         System.out.println("Popped:" + item);
         item = array.pop();
         System.out.println("Popped:" + item);
+
         array.pop();
     }
 
