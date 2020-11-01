@@ -6,7 +6,7 @@ public class LinkedList {
         int data;
         Node nextNode;
 
-        Node(int item){
+        Node(int item) {
             this.data = item;
             this.nextNode = null;
         }
@@ -30,8 +30,9 @@ public class LinkedList {
 
 
     public void insertNth(int data, int position) {
-        if(position < 1){
+        if (position < 1) {
             System.out.println("Invalid position");
+            System.out.println("***********");
             return;
         }
 
@@ -39,6 +40,7 @@ public class LinkedList {
 
         if (isEmpty()) {
             System.out.println("Invalid position");
+            System.out.println("***********");
             return;
         }
 
@@ -49,33 +51,37 @@ public class LinkedList {
         }
 
         Node previousNode = getPreviousNode(position - 1);
-        if(previousNode == null){
+        if (previousNode == null) {
             System.out.println("Invalid position");
+            System.out.println("***********");
             return;
         }
         node.nextNode = previousNode.nextNode;
         previousNode.nextNode = node;
     }
 
-    public void removeNth(int position){
-        if(isEmpty() || position < 1){
+    public void removeNth(int position) {
+        if (isEmpty() || position < 1) {
             System.out.println("Invalid position");
-        }else{
-            if(position == 1){
+            System.out.println("***********");
+        } else {
+            if (position == 1) {
                 Node tempNode = this.head;
                 this.head = this.head.nextNode;
                 tempNode.nextNode = null;
-            }else{
+            } else {
 
-                Node previousNode = getPreviousNode(position-1);
-                if(previousNode == null){
+                Node previousNode = getPreviousNode(position - 1);
+                if (previousNode == null) {
                     System.out.println("Invalid position");
+                    System.out.println("***********");
                     return;
                 }
 
                 Node deletedNode = previousNode.nextNode;
-                if(deletedNode == null){
+                if (deletedNode == null) {
                     System.out.println("Invalid position");
+                    System.out.println("***********");
                     return;
                 }
                 previousNode.nextNode = deletedNode.nextNode;
@@ -95,16 +101,17 @@ public class LinkedList {
             tempNode = tempNode.nextNode;
         }
         System.out.println("NULL");
+        System.out.println("***********");
     }
 
-    private boolean isEmpty(){
+    private boolean isEmpty() {
         return this.head == null;
     }
 
-    private Node getPreviousNode(int position){
+    private Node getPreviousNode(int position) {
         Node currentNode = this.head;
-        while(currentNode != null){
-            if(position == 1){
+        while (currentNode != null) {
+            if (position == 1) {
                 return currentNode;
             }
             currentNode = currentNode.nextNode;

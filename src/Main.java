@@ -1,3 +1,4 @@
+import arraylist.ArrayList;
 import linkedlist.LinkedList;
 import stack.StackWithArray;
 import stack.StackWithLinkedList;
@@ -5,9 +6,31 @@ import stack.StackWithLinkedList;
 public class Main {
 
     public static void main(String[] args) {
+        executeArrayListOperations();
         //executeLinkedList();
         //stackWithArrayOperations();
-        stackWithLinkedListOperations();
+        //stackWithLinkedListOperations();
+    }
+
+    private static void executeArrayListOperations() {
+        ArrayList list = new ArrayList(3);
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+        list.print();
+
+        list.add(50, 1);
+        list.add(60, 3);
+        list.print();
+
+        list.add(70, 4);
+
+        list.remove(1);
+        list.print();
+        list.remove(2);
+        list.print();
+        list.remove(2);
     }
 
     private static void stackWithLinkedListOperations() {
@@ -18,7 +41,7 @@ public class Main {
         list.push(30);
         list.print();
 
-        int item =  list.peek();
+        int item = list.peek();
         System.out.println("Top item:" + item);
 
         item = list.pop();
@@ -39,7 +62,7 @@ public class Main {
         array.push(30);
         array.print();
 
-        int item =  array.peek();
+        int item = array.peek();
         System.out.println("Top item:" + item);
 
         array.push(40);
@@ -60,8 +83,8 @@ public class Main {
         ls.addLast(20);
         ls.addLast(30);
         ls.print();
-        ls.insertNth(40,1);
-        ls.removeNth(2);
+        ls.insertNth(40, 1);//insert 40 before 10
+        ls.removeNth(2);// Remove 10
         ls.print();
     }
 }
